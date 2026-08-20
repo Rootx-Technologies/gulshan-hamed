@@ -1,9 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import { nav, site } from "@/lib/content";
+import { images, nav, site } from "@/lib/content";
 
 export function Header() {
   const pathname = usePathname();
@@ -26,8 +27,15 @@ export function Header() {
 
       <div className="container-site flex items-center justify-between py-4 md:py-5">
         <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-ink text-[0.7rem] font-medium tracking-[0.12em] text-cream">
-            GH
+          <span className="relative h-12 w-12 overflow-hidden rounded-xl ring-1 ring-line md:h-14 md:w-14">
+            <Image
+              src={images.logo}
+              alt={site.name}
+              fill
+              sizes="56px"
+              className="object-cover"
+              priority
+            />
           </span>
           <span className="leading-tight">
             <span className="block font-serif text-[1.15rem] text-ink">

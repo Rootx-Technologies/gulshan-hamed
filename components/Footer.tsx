@@ -1,15 +1,29 @@
+import Image from "next/image";
 import { SocialIcons } from "@/components/SocialIcons";
-import { site } from "@/lib/content";
+import { images, site } from "@/lib/content";
 
 export function Footer() {
   return (
     <footer className="border-t border-line bg-cream pb-20">
       <div className="container-site grid gap-10 py-14 md:grid-cols-4">
         <div className="md:col-span-2">
-          <p className="font-serif text-2xl">{site.shortName}</p>
-          <p className="mt-1 text-sm tracking-[0.16em] uppercase text-muted">
-            Sweets &amp; Bakers
-          </p>
+          <div className="flex items-center gap-3">
+            <span className="relative h-14 w-14 overflow-hidden rounded-xl ring-1 ring-line">
+              <Image
+                src={images.logo}
+                alt={site.name}
+                fill
+                sizes="56px"
+                className="object-cover"
+              />
+            </span>
+            <div>
+              <p className="font-serif text-2xl">{site.shortName}</p>
+              <p className="mt-1 text-sm tracking-[0.16em] uppercase text-muted">
+                Sweets &amp; Bakers
+              </p>
+            </div>
+          </div>
           <p className="font-urdu mt-4 text-xl leading-relaxed text-ink/80">
             {site.urduName}
           </p>

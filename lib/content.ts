@@ -55,6 +55,7 @@ const p = (id: string, file: string, w = 1400) =>
   `https://images.pexels.com/photos/${id}/${file}?auto=compress&cs=tinysrgb&w=${w}`;
 
 export const images = {
+  logo: "/images/logo.jpg",
   hero: "/images/hero-bakery.png",
   mithai: u("photo-1758910536889-43ce7b3199fd", 1600),
   gulab: p("15014919", "pexels-photo-15014919.jpeg"),
